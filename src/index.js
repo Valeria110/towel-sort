@@ -5,13 +5,8 @@ module.exports = function towelSort (matrix) {
   if(matrix === undefined || towelSort.arguments.length === 0) return [];
 
   return matrix.reduce((newArr, item, i) => {
-    if(i % 2 === 0){
-      newArr.push(item);
-    } else {
-      newArr.push(item.reverse())
-    }
-
-  return newArr.flat();
+    i % 2 === 0 ? newArr.push(item) : newArr.push(item.reverse());
+    return newArr.flat();
   }, [])
 }
 
